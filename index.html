@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop - New Trends in Multimedia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .workshop-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .date-location {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .organizers {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            border-left: 4px solid #3498db;
+        }
+
+        .organizers h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .schedule {
+            margin-bottom: 40px;
+        }
+
+        .schedule h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .schedule-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .schedule-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule-item .time {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+
+        .schedule-item .activity {
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .speakers-section {
+            margin-top: 40px;
+        }
+
+        .speakers-section h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .speaker-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .speaker-card h3 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+
+        .speaker-card .speaker-name {
+            color: #3498db;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .speaker-card .affiliation {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .speaker-card .abstract {
+            color: #555;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .speaker-card .bio {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            color: #555;
+            text-align: justify;
+        }
+
+        .bio-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .highlight h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header .date-location {
+                font-size: 1rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .schedule h2, .speakers-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="workshop-card">
+            <div class="header">
+                <h1>New Trends in Multimedia</h1>
+                <div class="date-location">
+                    <strong>Friday, May 27 • 9:00 AM - 2:00 PM</strong><br>
+                    NJIT GITC 4402
+                </div>
+            </div>
+            
+            <div class="organizers">
+                <h3>Organized by:</h3>
+                <p><strong>Vincent Oria</strong> (NJIT, USA) and <strong>Shin'ichi Satoh</strong> (NII, Japan)</p>
+            </div>
+            
+            <div class="content">
+                <div class="schedule">
+                    <h2>Schedule</h2>
+                    
+                    <div class="schedule-item">
+                        <div class="time">9:00 AM</div>
+                        <div class="activity">Coffee and pastry</div>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <div class="time">10:00 AM - 11:00 AM</div>
+                        <div class="activity"><strong>Possibilities and Limitations of Vision-Language Pretrained Models</strong><br>
+                        Shin'ichi Satoh (NII, Japan)</div>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <div class="time">11:00 AM - 12:00 PM</div>
+                        <div class="activity"><strong>Learnings from A Decade of Lifelog Access & Retrieval</strong><br>
+                        Cathal Gurrin (Dublin City University, Ireland)</div>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <div class="time">12:00 PM - 1:00 PM</div>
+                        <div class="activity"><strong>Knowledge Graphs and Multimedia</strong><br>
+                        Things we can do, things we can't, and how to change the latter<br>
+                        Luca Rossetto (Dublin City University, Ireland)</div>
+                    </div>
+                    
+                    <div class="highlight">
+                        <h3>🍕 Lunch Break</h3>
+                        <p>Pizza will be served at 1:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="speakers-section">
+                    <h2>Speakers & Presentations</h2>
+                    
+                    <div class="speaker-card">
+                        <h3>Possibilities and Limitations of Vision-Language Pretrained Models</h3>
+                        <div class="speaker-name">Shin'ichi Satoh</div>
+                        <div class="affiliation">National Institute of Informatics (NII), Japan</div>
+                        <div class="abstract">
+                            Vision-language pretrained models, such as CLIP and its variants, are widely used by computer vision community, natural language community, multimedia community, and so on. They are very powerful, especially for semantic analysis of visual contents. On the other hand, couple of drawbacks have been pointed out by recent research activities. In this talk, vision-language pretrained models are first briefly explained, followed by couple of drawbacks will be discussed. Especially, issues related to fine-grained image recognition and image similarity retrieval will be discussed.
+                        </div>
+                        <div class="bio">
+                            <div class="bio-title">Speaker Bio:</div>
+                            Shin'ichi Satoh received his BE degree in Electronics Engineering in 1987, his ME and PhD degrees in Information Engineering in 1989 and 1992 at the University of Tokyo. He joined National Center for Science Information Systems (NACSIS), Tokyo, in 1992. He is a full professor at National Institute of Informatics (NII), Tokyo, since 2004. He was a visiting scientist at the Robotics Institute, Carnegie Mellon University, from 1995 to 1997. His research interests include image processing, video content analysis and multimedia database. Currently he is leading the video processing project at NII, addressing video analysis, indexing, retrieval, and mining for broadcasted video archives.
+                        </div>
+                    </div>
+                    
+                    <div class="speaker-card">
+                        <h3>Learnings from A Decade of Lifelog Access & Retrieval</h3>
+                        <div class="speaker-name">Cathal Gurrin</div>
+                        <div class="affiliation">Dublin City University, Ireland</div>
+                        <div class="abstract">
+                            Over the past decade, lifelogging has evolved from a niche research topic into a vibrant interdisciplinary field at the intersection of computer vision, information retrieval, and human-computer interaction. In this talk, I will reflect on ten years of research into interactive lifelog retrieval, drawing insights from the ACM Lifelog Search Challenge (LSC) and other major initiatives that have shaped the community. I will highlight the key milestones in the development of multimodal lifelog datasets, advances in semantic indexing and search, and the emergence of novel user interfaces for interactive retrieval. By examining how the field has addressed the challenge of turning vast personal archives into searchable, meaningful content, I will offer a forward-looking perspective on the opportunities and open questions that lie ahead in building intelligent, user-centric lifelog systems.
+                        </div>
+                        <div class="bio">
+                            <div class="bio-title">Speaker Bio:</div>
+                            Professor Cathal Gurrin is a researcher and academic at Dublin City University (DCU) in Ireland. He is also the Deputy Director of the national ADAPT Centre for digital content technologies. Gurrin's research interests focus primarily on personal analytics and lifelogging, which involves creating extensive personal databases of lifelog images and other sensor data to capture and analyse daily activities and experiences. He has been a pioneer in this field, amassing a continuous personal archive since 2006 that includes over 15 million wearable camera images and hundreds of millions of other sensor readings. His work aims to develop assistive technologies that use wearable sensors and data analytics to infer knowledge about real-world activities and enhance individual performance and health. Gurrin is heavily involved in community conference organising activities and he as been the general co-chair of many leading conferences in his field, such as ECIR'11, MM'14, ICMR'20, MM'22/23, ICMR'24 and will be the general co-chair of ACM MM'25 and ACM Web'27 in Dublin.
+                        </div>
+                    </div>
+                    
+                    <div class="speaker-card">
+                        <h3>Knowledge Graphs and Multimedia</h3>
+                        <div class="speaker-name">Luca Rossetto</div>
+                        <div class="affiliation">Dublin City University, Ireland</div>
+                        <div class="abstract">
+                            Knowledge Graphs are an effective mechanism for representing Knowledge as a structure of interconnected facts. They work especially well for information atoms that can be easily captured using a short textual label or a literal value. For information best represented in different modalities, such as visual or aural, these graphs experience several limitations. Multimodal Knowledge Graphs commonly incorporate multimodal information by linking to external documents which are opaque to a query engine and hence only of limited use in complex graph queries. This talk will present an overview of the current state of multimodal knowledge graphs before introducing the MediaGraph concept that aims to make multimodal information into first class citizens in knowledge graphs.
+                        </div>
+                        <div class="bio">
+                            <div class="bio-title">Speaker Bio:</div>
+                            Luca Rossetto is an Assistant Professor at the School of Computing at Dublin City University. His research focuses on managing, analyzing, and retrieving multi-modal data. He is one of the core developers of the open-source multimedia retrieval engine 'vitrivr' and co-creator of the 'Distributed Retrieval Evaluation Server' used for interactive multimedia evaluations in different areas. More recently, Luca's research focuses on the intersection between Knowledge Graphs and Multimedia Data with the aim of seamlessly integrating multimodal information into graph structures.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
