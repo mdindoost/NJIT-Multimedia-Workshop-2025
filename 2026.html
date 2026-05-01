@@ -15,7 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #c41e3a 0%, #8b1538 100%);
+            background: linear-gradient(135deg, #feffd6 0%, #fffde7 100%);
             min-height: 100vh;
         }
 
@@ -31,7 +31,7 @@
         }
 
         .back-link a {
-            color: white;
+            color: #7a6000;
             text-decoration: none;
             font-size: 0.95rem;
             opacity: 0.85;
@@ -177,6 +177,75 @@
             color: #444;
         }
 
+        .speaker-card {
+            border: 2px solid #e8e0e3;
+            border-radius: 14px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .speaker-card summary {
+            padding: 18px 22px;
+            background: #fdf4f6;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .speaker-photo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+            border: 2px solid #e0c8cf;
+            flex-shrink: 0;
+        }
+
+        .speaker-card summary > div {
+            flex: 1;
+        }
+
+        .speaker-card summary::-webkit-details-marker { display: none; }
+
+        .speaker-card summary::after {
+            content: '▸';
+            color: #c41e3a;
+            font-size: 1rem;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+
+        .speaker-card[open] summary::after {
+            transform: rotate(90deg);
+        }
+
+        .speaker-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #8b1538;
+        }
+
+        .speaker-affil {
+            font-size: 0.88rem;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .speaker-bio {
+            padding: 20px 22px;
+            border-top: 1px solid #f0e6ea;
+            font-size: 0.97rem;
+            color: #444;
+            line-height: 1.75;
+        }
+
+        .speaker-bio p { margin-bottom: 12px; }
+        .speaker-bio p:last-child { margin-bottom: 0; }
+
         @media (max-width: 600px) {
             .header h1 { font-size: 2rem; }
             .content { padding: 25px 20px; }
@@ -204,25 +273,93 @@
             <div class="content">
 
                 <div class="announcement-banner">
-                    <p>This page is an early announcement. Full details including schedule, speaker bios, and venue will be added as the event approaches.</p>
+                    <p>Workshop details are being finalized. Schedule and venue information will be announced shortly.</p>
                 </div>
 
                 <div class="section">
                     <h2>About</h2>
-                    <p>The 2nd Workshop on New Trends in Multimedia focuses on <strong>Multimedia Intelligence</strong> — bringing together researchers and practitioners to explore the latest advances in intelligent multimedia systems, understanding, and applications.</p>
+                    <p>The 2nd Workshop on New Trends in Multimedia focuses on <strong>Multimedia Intelligence</strong>, bringing together researchers and practitioners to explore the latest advances in intelligent multimedia systems, understanding, and applications.</p>
                 </div>
 
                 <div class="section">
                     <h2>Organizers</h2>
                     <div class="organizers-box">
-                        <p><strong>Vincent Oria</strong> (NJIT, USA) and <strong>Shin'ichi Satoh</strong> (NII, Japan)</p>
-                        <p style="margin-top: 10px; font-size: 0.95rem; color: #666;">Co-organized by <a href="https://www.gsanjit.com/" target="_blank" style="color: #c41e3a; font-weight: 600; text-decoration: none;">Graduate Student Association (GSA)</a>, NJIT</p>
+                        <p><strong><a href="https://people.njit.edu/profile/oria#publications" target="_blank" style="color: #8b1538; text-decoration: none;">Vincent Oria</a></strong> (NJIT, USA) and <strong><a href="https://www.nii.ac.jp/en/faculty/digital_content/satoh_shinichi/" target="_blank" style="color: #8b1538; text-decoration: none;">Shin'ichi Satoh</a></strong> (NII, Japan)</p>
+                        <p style="margin-top: 10px; font-size: 0.95rem; color: #666;">Co-organized by <strong><a href="https://mdindoost.github.io/" target="_blank" style="color: #8b1538; text-decoration: none;">Mohammad Dindoost</a></strong> (GSA, NJIT)</p>
                     </div>
                 </div>
 
                 <div class="section">
                     <h2>Invited Speakers</h2>
-                    <div class="tba-box">To Be Announced</div>
+
+                    <details class="speaker-card">
+                        <summary>
+                            <img src="satoshinichi.jpg" alt="Prof. Shin'ichi Satoh" class="speaker-photo">
+                            <div>
+                                <div class="speaker-name">Prof. Shin'ichi Satoh</div>
+                                <div class="speaker-affil">National Institute of Informatics (NII), Japan</div>
+                            </div>
+                        </summary>
+                        <div class="speaker-bio">
+                            <p><a href="https://www.nii.ac.jp/en/faculty/digital_content/satoh_shinichi/" target="_blank" style="color: #8b1538; text-decoration: none; font-weight: 600;">Prof. Shin'ichi Satoh</a> is a Professor at the <a href="https://www.nii.ac.jp/en/" target="_blank" style="color: #8b1538; text-decoration: none;">National Institute of Informatics (NII)</a> in Tokyo, Japan, and a leading researcher in multimedia and computer vision.</p>
+                            <p>His research focuses on video analysis, multimedia information retrieval, and large-scale visual data understanding, with particular emphasis on extracting knowledge from broadcast video archives and complex visual datasets.</p>
+                            <p>Prof. Satoh has made significant contributions to image and video retrieval, multimedia databases, and visual content analysis, and he leads research efforts on intelligent systems that can interpret and organize visual information at scale.</p>
+                            <p>He earned his Ph.D. in Engineering from the University of Tokyo and has authored hundreds of publications across computer vision, machine learning, and multimedia computing, with impactful work spanning both foundational methods and real-world applications.</p>
+                            <p>At this workshop, Prof. Satoh brings deep expertise in multimedia AI and large-scale video understanding, offering insights into how intelligent systems can analyze and retrieve information from rich visual data sources.</p>
+                        </div>
+                    </details>
+
+                    <details class="speaker-card">
+                        <summary>
+                            <img src="houle.jpg" alt="Prof. Michael E. Houle" class="speaker-photo">
+                            <div>
+                                <div class="speaker-name">Prof. Michael E. Houle</div>
+                                <div class="speaker-affil">New Jersey Institute of Technology (NJIT), USA</div>
+                            </div>
+                        </summary>
+                        <div class="speaker-bio">
+                            <p><a href="https://people.njit.edu/profile/meh43" target="_blank" style="color: #8b1538; text-decoration: none; font-weight: 600;">Prof. Michael E. Houle</a> is a Senior University Lecturer in Computer Science at the New Jersey Institute of Technology (NJIT), with extensive experience in machine learning, data mining, and algorithmic research.</p>
+                            <p>He earned his Ph.D. in Computer Science from McGill University and has held research and academic positions across Japan, Australia, and North America, including roles at the University of Sydney, IBM Tokyo Research Laboratory, and the National Institute of Informatics (NII) in Japan.</p>
+                            <p>Prof. Houle's research focuses on similarity search, high-dimensional data analysis, and intrinsic dimensionality, contributing foundational methods used in clustering, classification, and anomaly detection. His work on local intrinsic dimensionality (LID) has significantly influenced modern approaches to understanding complexity in machine learning and deep learning systems.</p>
+                            <p>He is a highly accomplished researcher with numerous publications and multiple best paper awards at leading venues such as ICDM, SISAP, and SDM, reflecting the impact of his contributions to data mining and AI.</p>
+                            <p>At this workshop, Prof. Houle brings deep expertise in theoretical and scalable machine learning, offering insights into how high-dimensional data can be effectively modeled, analyzed, and leveraged in modern AI systems.</p>
+                        </div>
+                    </details>
+
+                    <details class="speaker-card">
+                        <summary>
+                            <img src="Cathal Gurrin.jpg" alt="Prof. Cathal Gurrin" class="speaker-photo">
+                            <div>
+                                <div class="speaker-name">Prof. Cathal Gurrin</div>
+                                <div class="speaker-affil">Dublin City University (DCU), Ireland</div>
+                            </div>
+                        </summary>
+                        <div class="speaker-bio">
+                            <p><a href="https://www.dcu.ie/computing/people/cathal-gurrin" target="_blank" style="color: #8b1538; text-decoration: none; font-weight: 600;">Prof. Cathal Gurrin</a> is a Full Professor in the School of Computing at <a href="https://www.dcu.ie/" target="_blank" style="color: #8b1538; text-decoration: none;">Dublin City University (DCU)</a>, where he also serves as Assistant Head for International Engagement and Deputy Director of the <a href="https://www.adaptcentre.ie" target="_blank" style="color: #8b1538; text-decoration: none;">ADAPT Centre</a>.</p>
+                            <p>His research focuses on lifelogging, personal analytics, and multimedia information retrieval, with an emphasis on using wearable sensors and AI-driven data analysis to build assistive technologies that enhance human memory, health, and productivity.</p>
+                            <p>Prof. Gurrin is widely recognized as a pioneer in lifelogging, having continuously captured a personal digital record of his daily life since 2006 using wearable devices. His work explores how large-scale personal data can be organized, searched, and used to support real-world decision-making and cognitive assistance.</p>
+                            <p>He has led and contributed to numerous international research initiatives and is the founder and co-organizer of major benchmarking efforts such as the Lifelog Search Challenge, helping advance global research in multimedia retrieval and human-centered AI.</p>
+                            <p>At this workshop, Prof. Gurrin brings deep expertise at the intersection of AI, human-centered computing, and large-scale personal data systems, offering insights into how emerging technologies can augment human capabilities.</p>
+                        </div>
+                    </details>
+
+                    <details class="speaker-card">
+                        <summary>
+                            <img src="CHUA Tat Seng.jpg" alt="Prof. Chua Tat-Seng" class="speaker-photo">
+                            <div>
+                                <div class="speaker-name">Prof. Chua Tat-Seng</div>
+                                <div class="speaker-affil">National University of Singapore (NUS), Singapore</div>
+                            </div>
+                        </summary>
+                        <div class="speaker-bio">
+                            <p><a href="https://www.comp.nus.edu.sg/cs/people/chuats/" target="_blank" style="color: #8b1538; text-decoration: none; font-weight: 600;">Prof. Chua Tat-Seng</a> is the KITHCT Chair Professor in the School of Computing at the National University of Singapore (NUS). He is a leading researcher in artificial intelligence and has played a foundational role in shaping computing research at NUS, including serving as the Founding Dean of the School of Computing. He is the co-Director of <a href="https://www.nextcenter.org/" target="_blank" style="color: #8b1538; text-decoration: none;">NExT</a>, a joint research center between NUS and Tsinghua University.</p>
+                            <p>His research spans multimodal AI, conversational search and recommendation systems, and responsible AI, with a strong focus on understanding and extracting insights from large-scale unstructured data such as text, images, and video.</p>
+                            <p>Prof. Chua has made significant contributions to multimedia information retrieval, social media analytics, and recommendation systems, influencing both academia and real-world applications in areas like e-commerce and intelligent systems.</p>
+                            <p>He is a highly prolific scholar with hundreds of publications and thousands of citations, and his recent work continues to push the boundaries of large language models, multimodal learning, and AI-driven recommendation technologies.</p>
+                            <p>At this workshop, Prof. Chua brings deep expertise in AI systems that integrate multiple data modalities, offering insights into the future of intelligent, human-centered information systems.</p>
+                        </div>
+                    </details>
+
                 </div>
 
                 <div class="section">
@@ -239,11 +376,11 @@
                     <h2>Sponsors</h2>
                     <div class="sponsors-grid">
                         <div class="sponsor-item">
-                            <div class="sponsor-name">NJIT</div>
+                            <div class="sponsor-name"><a href="https://computing.njit.edu/" target="_blank" style="color: #8b1538; text-decoration: none;">NJIT</a></div>
                             <div class="sponsor-desc">New Jersey Institute of Technology<br>Newark, NJ, USA</div>
                         </div>
                         <div class="sponsor-item">
-                            <div class="sponsor-name">NII</div>
+                            <div class="sponsor-name"><a href="https://www.nii.ac.jp/en/" target="_blank" style="color: #8b1538; text-decoration: none;">NII</a></div>
                             <div class="sponsor-desc">National Institute of Informatics<br>Tokyo, Japan</div>
                         </div>
                         <div class="sponsor-item">
