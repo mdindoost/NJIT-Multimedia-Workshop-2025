@@ -1,204 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshop on Emerging Topics in Multimedia</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NJIT Multimedia Intelligence Workshop Series (MMI)</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #c41e3a 0%, #8b1538 100%);
-            min-height: 100vh;
-        }
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #c41e3a, #8b1538);
+    color: white;
+}
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 50px 20px;
-        }
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 50px 20px;
+}
 
-        .series-header {
-            text-align: center;
-            color: white;
-            margin-bottom: 50px;
-        }
+h1 {
+    text-align: center;
+    font-size: 2.8rem;
+}
 
-        .series-header h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
+p.subtitle {
+    text-align: center;
+    max-width: 700px;
+    margin: 15px auto 40px;
+    opacity: 0.9;
+}
 
-        .series-header p {
-            font-size: 1.1rem;
-            opacity: 0.85;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+.card {
+    background: white;
+    color: black;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
 
-        .editions-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
 
-        .edition-card {
-            background: rgba(255,255,255,0.97);
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-            overflow: hidden;
-            display: flex;
-            align-items: stretch;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-            text-decoration: none;
-            color: inherit;
-        }
+.year {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #c41e3a;
+}
 
-        .edition-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 18px 40px rgba(0,0,0,0.18);
-        }
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
 
-        .edition-year {
-            background: linear-gradient(135deg, #c41e3a, #8b1538);
-            color: white;
-            min-width: 120px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 25px 20px;
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
+.footer a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+}
 
-        .edition-year .edition-num {
-            font-size: 0.75rem;
-            font-weight: 400;
-            opacity: 0.8;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            margin-top: 4px;
-        }
-
-        .edition-info {
-            padding: 25px 30px;
-            flex: 1;
-        }
-
-        .edition-info h2 {
-            font-size: 1.45rem;
-            color: #8b1538;
-            margin-bottom: 8px;
-        }
-
-        .edition-info .edition-date {
-            font-size: 0.95rem;
-            color: #666;
-            margin-bottom: 8px;
-        }
-
-        .edition-info .edition-status {
-            display: inline-block;
-            font-size: 0.8rem;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-weight: 600;
-        }
-
-        .status-past {
-            background: #e8f5e9;
-            color: #2e7d32;
-        }
-
-        .status-upcoming {
-            background: #fff3e0;
-            color: #e65100;
-        }
-
-        .arrow {
-            display: flex;
-            align-items: center;
-            padding: 0 25px;
-            font-size: 1.5rem;
-            color: #c41e3a;
-            opacity: 0.5;
-        }
-
-        .edition-card:hover .arrow {
-            opacity: 1;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            color: rgba(255,255,255,0.6);
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 600px) {
-            .series-header h1 { font-size: 2rem; }
-            .edition-year { min-width: 85px; font-size: 1.7rem; padding: 20px 15px; }
-            .edition-info { padding: 18px 18px; }
-            .arrow { padding: 0 12px; }
-        }
-    </style>
+.footer a:hover {
+    text-decoration: underline;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <div class="series-header">
-            <h1>Workshop on Emerging Topics in Multimedia</h1>
-            <p>An annual workshop series bringing together researchers and practitioners at the forefront of multimedia research.</p>
-        </div>
+<h1>NJIT Multimedia Intelligence Workshop Series (MMI)</h1>
 
-        <div class="editions-list">
+<p class="subtitle">
+An annual research workshop at NJIT bringing together students, international researchers,
+and practitioners working at the intersection of multimedia, AI, and multimodal learning.
+<br><br>
+<strong>
+MMI is a community-driven initiative with the long-term vision of evolving
+into an international conference on Multimedia Intelligence.
+</strong>
+</p>
 
-            <!-- 2026 -->
-            <a class="edition-card" href="2026.html">
-                <div class="edition-year">
-                    2026
-                    <span class="edition-num">2nd ed.</span>
-                </div>
-                <div class="edition-info">
-                    <h2>Multimedia Intelligence</h2>
-                    <div class="edition-date">May 21–22, 2026</div>
-                    <span class="edition-status status-upcoming">Upcoming — Announcement</span>
-                </div>
-                <div class="arrow">›</div>
-            </a>
-
-            <!-- 2025 -->
-            <a class="edition-card" href="2025.html">
-                <div class="edition-year">
-                    2025
-                    <span class="edition-num">1st ed.</span>
-                </div>
-                <div class="edition-info">
-                    <h2>New Trends in Multimedia</h2>
-                    <div class="edition-date">Friday, June 27, 2025 · NJIT GITC 4402</div>
-                    <span class="edition-status status-past">Past Edition</span>
-                </div>
-                <div class="arrow">›</div>
-            </a>
-
-        </div>
-
-        <div class="footer">
-            <a href="https://cs.njit.edu/" style="color:rgba(255,255,255,0.6); text-decoration:none;" target="_blank">Department of Computer Science</a> · New Jersey Institute of Technology (NJIT)
-        </div>
-
+<a href="2026.html" class="card">
+    <div>
+        <h2>Multimedia Intelligence</h2>
+        <p>May 21–22, 2026 · NJIT</p>
+        <span style="color:#e65100;">Upcoming</span>
     </div>
+    <div class="year">2026</div>
+</a>
+
+<a href="2025.html" class="card">
+    <div>
+        <h2>Foundations of Multimedia Intelligence</h2>
+        <p>June 27, 2025 · NJIT</p>
+        <span style="color:#2e7d32;">Past Edition</span>
+    </div>
+    <div class="year">2025</div>
+</a>
+
+<div class="footer">
+    <a href="https://computing.njit.edu/" target="_blank">Department of Computer Science</a> · New Jersey Institute of Technology (NJIT)
+</div>
+
+</div>
 </body>
 </html>
