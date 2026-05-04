@@ -232,9 +232,67 @@ ul li {
     margin-top: 4px;
 }
 
+/* Schedule */
+.schedule-day {
+    margin-bottom: 28px;
+}
+
+.schedule-day-title {
+    background: #8b1538;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px 8px 0 0;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #e8e0e3;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+}
+
+.schedule-table tr:nth-child(even) {
+    background: #fdf4f6;
+}
+
+.schedule-table tr:nth-child(odd) {
+    background: #fff;
+}
+
+.schedule-table td {
+    padding: 10px 16px;
+    vertical-align: top;
+    font-size: 0.95rem;
+    color: #444;
+    border-bottom: 1px solid #f0e6ea;
+}
+
+.schedule-table tr:last-child td {
+    border-bottom: none;
+}
+
+.schedule-time {
+    white-space: nowrap;
+    font-weight: 600;
+    color: #8b1538;
+    width: 170px;
+}
+
+.schedule-speaker {
+    font-size: 0.88rem;
+    color: #777;
+    margin-top: 2px;
+}
+
 @media (max-width: 600px) {
     .header h1 { font-size: 1.7rem; }
     .sponsors-grid { flex-direction: column; }
+    .schedule-time { width: auto; }
 }
 </style>
 </head>
@@ -382,6 +440,43 @@ ul li {
 
         <details class="speaker-card">
             <summary>
+                <img src="edunn.jpg" alt="Prof. Enrique Dunn" class="speaker-photo">
+                <div>
+                    <div class="speaker-name">Prof. Enrique Dunn</div>
+                    <div class="speaker-affil">Stevens Institute of Technology, USA</div>
+                </div>
+            </summary>
+            <div class="speaker-bio">
+                <p><strong>Talk:</strong> TBD</p>
+                <p><strong>Abstract:</strong> TBD</p>
+                <hr style="border:none;border-top:1px solid #f0e6ea;margin:14px 0;">
+                <p><strong>Prof. Enrique Dunn</strong> is an Associate Professor in the Department of Computer Science at Stevens Institute of Technology. His research focuses on 3D Computer Vision, investigating the geometric and semantic relationships among a 3D scene and a depicting set of images.</p>
+                <p>Dr. Dunn earned a degree in Computer Engineering from the Autonomous University of Baja California (Mexico) in 1999. He completed a Master's degree in Computer Science in 2001 and a doctorate in Electronics and Telecommunications in 2006, both from the Ensenada Center for Scientific Research and Higher Education (Mexico). During his doctorate studies, Dr. Dunn carried out research while visiting the French Institute for Research in Computer Science and Control in Rocquencourt.</p>
+                <p>He joined the Department of Computer Science of the University of North Carolina at Chapel Hill as a visiting scholar in 2008, after being awarded a one-year Postdoctoral Fellowship for Studies Abroad by the National Council for Science and Technology (Mexico). He remained with UNC-CH CS Department as a postdoctoral researcher until he became a research assistant professor in 2012. Dr. Dunn has authored over 40 papers in international conferences and journals.</p>
+                <p>Dr. Dunn has served the research community as Associate Editor for the Elsevier Journal of Image and Vision Computing (IMAVIS), Area Chair at ECCV 2020 and 3DV Conference, and Reviewer for IEEE Conference on Computer Vision and Pattern Recognition (CVPR).</p>
+            </div>
+        </details>
+
+        <details class="speaker-card">
+            <summary>
+                <img src="pwang44.jpg" alt="Prof. Ping Wang" class="speaker-photo">
+                <div>
+                    <div class="speaker-name">Prof. Ping Wang</div>
+                    <div class="speaker-affil">Stevens Institute of Technology, USA</div>
+                </div>
+            </summary>
+            <div class="speaker-bio">
+                <p><strong>Talk:</strong> TBD</p>
+                <p><strong>Abstract:</strong> TBD</p>
+                <hr style="border:none;border-top:1px solid #f0e6ea;margin:14px 0;">
+                <p><strong>Prof. Ping Wang</strong> is an Assistant Professor in the Department of Computer Science at Stevens Institute of Technology and an affiliated member of The Stevens Institute for Artificial Intelligence (SIAI). She received her Ph.D. from Virginia Tech under the supervision of Dr. Chandan K. Reddy in 2021. Her primary research interests are in the broad area of data mining and machine learning, with a particular focus on healthcare analytics, including clinical question answering, information extraction, graph mining, and survival analysis. She has published papers in leading conferences (e.g., WWW, CIKM, and AAAI) and high-impact journals (e.g., ACM Computing Surveys and IEEE TKDE).</p>
+                <p>She received the NSF CRII Award in 2023 and the Amazon Research Award in 2025. She was recognized as the "Research PhD Student of the Year" (one per year) in the Department of Computer Science at Virginia Tech in 2021.</p>
+                <p>Prof. Wang has served the research community in multiple roles, including AAAI 2026 Program Committee Member, IEEE ICDM 2025 Publicity Chair, Session Chair at IEEE/ACM CHASE 2025, COLING 2025 Program Committee Member, AAAI 2025 Doctoral Consortium Program Committee, AAAI 2025 Program Committee Member, ACL 2024 Program Committee Member, and Reviewer for Transactions on Neural Networks and Learning Systems (TNNLS).</p>
+            </div>
+        </details>
+
+        <details class="speaker-card">
+            <summary>
                 <img src="zzhu41.jpg" alt="Prof. Zining Zhu" class="speaker-photo">
                 <div>
                     <div class="speaker-name">Prof. Zining Zhu</div>
@@ -400,7 +495,113 @@ ul li {
 
     <div class="section">
         <h2>Schedule</h2>
-        <div class="box">To be announced</div>
+
+        <div class="schedule-day">
+            <div class="schedule-day-title">Day 1 — May 21, 2026</div>
+            <table class="schedule-table">
+                <tr>
+                    <td class="schedule-time">09:00 – 09:30</td>
+                    <td>Registration &amp; Coffee</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">09:30 – 09:40</td>
+                    <td>
+                        Opening Remarks
+                        <div class="schedule-speaker">Vincent Oria (NJIT)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">09:40 – 10:40</td>
+                    <td>
+                        Keynote
+                        <div class="schedule-speaker">Tat-Seng Chua (NUS)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">10:40 – 11:00</td>
+                    <td>Coffee Break</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">11:00 – 11:50</td>
+                    <td>Invited Talk</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">11:50 – 12:40</td>
+                    <td>Invited Talk</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">12:40 – 13:40</td>
+                    <td>Lunch Break</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">13:40 – 14:30</td>
+                    <td>Invited Talk</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">14:30 – 15:20</td>
+                    <td>Invited Talk</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">15:20 – 15:40</td>
+                    <td>Coffee Break</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">15:40 – 16:40</td>
+                    <td>Panel / Discussion</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="schedule-day">
+            <div class="schedule-day-title">Day 2 — May 22, 2026</div>
+            <table class="schedule-table">
+                <tr>
+                    <td class="schedule-time">09:00 – 09:30</td>
+                    <td>Registration &amp; Coffee</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">09:30 – 09:40</td>
+                    <td>Opening Remarks</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">09:40 – 10:40</td>
+                    <td>Keynote</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">10:40 – 11:00</td>
+                    <td>Coffee Break</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">11:00 – 11:50</td>
+                    <td>Invited Talk</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">11:50 – 12:40</td>
+                    <td>Invited Talk</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">12:40 – 13:40</td>
+                    <td>Lunch Break</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">13:40 – 14:30</td>
+                    <td>Invited Talk</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">14:30 – 15:20</td>
+                    <td>Invited Talk</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">15:20 – 15:40</td>
+                    <td>Coffee Break</td>
+                </tr>
+                <tr>
+                    <td class="schedule-time">15:40 – 16:40</td>
+                    <td>Panel / Discussion</td>
+                </tr>
+            </table>
+        </div>
+
     </div>
 
     <div class="section">
